@@ -555,7 +555,9 @@ h2 em {
 .shot--main {
   grid-column: 2 / -1;
   grid-row: 1;
-  aspect-ratio: 16 / 9;
+  /* padding ratio: WebKit collapses aspect-ratio-only grid tiles */
+  height: 0;
+  padding-bottom: 56.25%;
   transform: rotate(0.7deg);
   z-index: 3;
 }
@@ -567,7 +569,8 @@ h2 em {
 .shot--back {
   grid-column: 2;
   grid-row: 2;
-  aspect-ratio: 1 / 1;
+  height: 0;
+  padding-bottom: 100%;
   transform: rotate(-1deg);
   z-index: 2;
 }
@@ -579,7 +582,8 @@ h2 em {
 .shot--small {
   grid-column: 3;
   grid-row: 2;
-  aspect-ratio: 1 / 1;
+  height: 0;
+  padding-bottom: 100%;
   transform: rotate(1.2deg);
   z-index: 1;
 }
@@ -1721,14 +1725,14 @@ h2 em {
   .shot--me {
     grid-column: 1 / -1;
     grid-row: 1;
-    aspect-ratio: 4 / 5;
+    height: 0;
+    padding-bottom: 125%;
     transform: rotate(-0.8deg);
   }
 
   .shot--main {
     grid-column: 1 / -1;
     grid-row: 2;
-    aspect-ratio: 16 / 9;
     transform: rotate(0.4deg);
   }
 
